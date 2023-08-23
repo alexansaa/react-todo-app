@@ -1,7 +1,9 @@
 import { useState } from 'react';
 import styles from '@/styles/TodoItem.module.css';
+import { useAuthContext } from '@/context/AuthContext';
 
 const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
+  const { user } = useAuthContext();
   const [editing, setEditing] = useState(false);
   const completedStyle = {
     fontStyle: 'italic',
@@ -32,7 +34,11 @@ const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
           checked={itemProp.completed}
           onChange={() => handleChange(itemProp.id)}
         />
-        <button onClick={handleEditing}>Edit</button>
+        {user && (
+          <button onClick={handleEditing}>
+            Edit
+          </button>
+        )}
         <button onClick={() => delTodo(itemProp.id)}>Delete</button>
         <span style={itemProp.completed ? completedStyle : null}>
           {itemProp.title}

@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styles from '@/styles/TodoItem.module.css';
 import { useAuthContext } from '@/context/AuthContext';
+import PropTypes from 'prop-types';
 
 const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
   const { user } = useAuthContext();

@@ -1,5 +1,6 @@
 import { Navigate, useLocation } from 'react-router-dom';
 import { useAuthContext } from '@/context/AuthContext';
+import PropTypes from 'prop-types';
 
 const ProtectedRoute = ({ children }) => {
   const { user } = useAuthContext();

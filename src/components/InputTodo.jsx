@@ -35,4 +35,9 @@ const InputTodo = ({ addTodoItem }) => {
     </>
   );
 };
+
+InputTodo.propTypes = {
+  addTodoItem: PropTypes.node.isRequired,
+};
+
 export default InputTodo;

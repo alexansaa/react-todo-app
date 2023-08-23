@@ -55,4 +55,12 @@ const TodoItem = ({ itemProp, handleChange, delTodo, setUpdate }) => {
     </li>
   );
 };
+
+TodoItem.propTypes = {
+  itemProp: PropTypes.node.isRequired,
+  handleChange: PropTypes.node.isRequired,
+  delTodo: PropTypes.node.isRequired,
+  setUpdate: PropTypes.node.isRequired,
+};
+
 export default TodoItem;
